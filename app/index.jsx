@@ -4,9 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const Home = () => {
   return (
     <View style={styles.container}>
-      <Link href="/timers" style={styles.link}>
-        Timer Options
-      </Link>
+      <Link href="/timers" style={styles.link}>Timer Options</Link>
     </View>
   );
 };
