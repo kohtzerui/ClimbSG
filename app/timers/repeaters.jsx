@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import {View,Text,TouchableOpacity, StyleSheet} from 'react-native'
-import { SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context'
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { Link } from 'expo-router'
 
 const WORKOUT_CONFIG = {

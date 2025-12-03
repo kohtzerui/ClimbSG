@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <Link href="/timers" style={styles.link}>Timer Options</Link>
+      <Link href="/calendar" style={styles.link}>Events In Singapore</Link>
     </View>
   );
 };

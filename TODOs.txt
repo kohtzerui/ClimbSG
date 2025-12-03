@@ -1,0 +1,6 @@
+-Start of the Calendar Portion of the App
+-Implement Heavy Finger Board
+-Implement ARC Timer
+-Implement 4x4 Circuit Timer
+-Implement Isometric Timer
+-Include a description of why for each timer
