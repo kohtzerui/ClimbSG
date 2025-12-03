@@ -16,14 +16,9 @@ export default function CalendarsIndex() {
     <SafeAreaView style={styles.safe}>
       <View style={styles.container}>
         <Text style={styles.title}>SEA Climbing Calendars</Text>
-        {COUNTRIES.map(name => {
-          const slug = name.toLowerCase().replace(/\s+/g, '-')
+        {COUNTRIES.map(name => {const slug = name.toLowerCase().replace(/\s+/g, '-')
           return (
-            <Link
-              key={slug}
-              href={`/calendars/${slug}`}
-              asChild
-            >
+            <Link key={slug} href={`/calendar/${slug}`} asChild>
               <Pressable style={styles.row}>
                 <Text style={styles.rowText}>{name}</Text>
               </Pressable>
