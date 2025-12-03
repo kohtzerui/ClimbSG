@@ -4,7 +4,10 @@ import { StyleSheet, Text, View } from 'react-native';
 const RootLayout = () => {
     return (
         <Stack>
-            <Stack.Screen name="index" options={{title: "Timer"}}/> 
+            <Stack.Screen name="index" options={{title: "Home Page"}}/>
+            
+            <Stack.Screen name="timers/index" options={{title: "Timer Page"}}/>
+            <Stack.Screen name="timers/emilHang" options={{title: "Emil Hang"}}/>  
         </Stack>
     )
 }
