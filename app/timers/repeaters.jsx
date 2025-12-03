@@ -1,198 +1,249 @@
-// app/timers/repeaters.jsx or repeaters.js
-import React, { useEffect, useState } from "react";
-import { View, Text, Pressable, StyleSheet } from "react-native";
+import React, { useEffect, useMemo, useState } from 'react'
+import {View,Text,TouchableOpacity, StyleSheet} from 'react-native'
+import { SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context'
+import { Link } from 'expo-router'
 
-const WORK_SECONDS = 7;
-const REST_SECONDS = 3;
-const BIG_REST_SECONDS = 120;
-const REPS_PER_SET = 6;
-const TOTAL_SETS = 3;
+const WORKOUT_CONFIG = {
+  SETS: 3, // number of sets
+  REPS_PER_SET: 6, // hangs per set
 
-export default function RepeatersScreen() {
-  const [isRunning, setIsRunning] = useState(false);
-  const [phase, setPhase] = useState("work"); // "work" | "rest" | "bigRest" | "done"
-  const [currentSet, setCurrentSet] = useState(1);
-  const [currentRep, setCurrentRep] = useState(1);
-  const [secondsLeft, setSecondsLeft] = useState(WORK_SECONDS);
+  HANG_SEC: 7, // hang time (seconds)
+  REST_BETWEEN_REPS_SEC: 3, // short rest between hangs
+  REST_BETWEEN_SETS_SEC: 120 // long rest between sets (2 min)
+}
 
-  useEffect(() => {
-    if (!isRunning || phase === "done") return;
+const PHASES = {
+  IDLE: 'idle',
+  HANG: 'hang',
+  REST: 'rest',
+  LONG_REST: 'longRest',
+  DONE: 'done'
+}
 
-    const id = setInterval(() => {
-      setSecondsLeft((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 1000);
+function RepeatersTimer() {
+  const [phase, setPhase] = useState(PHASES.HANG)
+  const [setIndex, setSetIndex] = useState(1)
+  const [repIndex, setRepIndex] = useState(1)
+  const [secondsLeft, setSecondsLeft] = useState(WORKOUT_CONFIG.HANG_SEC)
+  const [running, setRunning] = useState(false)
 
-    return () => clearInterval(id);
-  }, [isRunning, phase]);
-
-  useEffect(() => {
-    if (!isRunning) return;
-    if (secondsLeft > 0) return;
-    if (phase === "done") return;
-
-    advancePhase();
-  }, [secondsLeft, isRunning, phase]);
-
-  const advancePhase = () => {
-    setSecondsLeft(0);
-
-    setPhase((prevPhase) => {
-      if (prevPhase === "work") {
-        if (currentRep < REPS_PER_SET) {
-          setSecondsLeft(REST_SECONDS);
-          return "rest";
-        } else {
-          if (currentSet < TOTAL_SETS) {
-            setSecondsLeft(BIG_REST_SECONDS);
-            return "bigRest";
-          } else {
-            setIsRunning(false);
-            return "done";
-          }
-        }
-      }
-
-      if (prevPhase === "rest") {
-        setCurrentRep((r) => r + 1);
-        setSecondsLeft(WORK_SECONDS);
-        return "work";
-      }
-
-      if (prevPhase === "bigRest") {
-        setCurrentSet((s) => s + 1);
-        setCurrentRep(1);
-        setSecondsLeft(WORK_SECONDS);
-        return "work";
-      }
-
-      return prevPhase;
-    });
-  };
-
-  const handleStartPause = () => {
-    if (phase === "done") {
-      resetAll();
-      setIsRunning(true);
-      return;
+  const phaseLabel = useMemo(() => {
+    switch (phase) {
+      case PHASES.HANG:
+        return 'HANG'
+      case PHASES.REST:
+        return 'REST'
+      case PHASES.LONG_REST:
+        return 'SET REST'
+      case PHASES.DONE:
+        return 'DONE'
+      default:
+        return 'READY'
     }
-    setIsRunning((prev) => !prev);
-  };
+  }, [phase])
 
-  const resetAll = () => {
-    setIsRunning(false);
-    setPhase("work");
-    setCurrentSet(1);
-    setCurrentRep(1);
-    setSecondsLeft(WORK_SECONDS);
-  };
+  // Tick down the timer
+  useEffect(() => {
+    if (!running || phase === PHASES.IDLE || phase === PHASES.DONE) return
 
-  const formatTime = (totalSeconds) => {
-    const m = Math.floor(totalSeconds / 60);
-    const s = totalSeconds % 60;
-    const mm = m.toString().padStart(2, "0");
-    const ss = s.toString().padStart(2, "0");
-    return `${mm}:${ss}`;
-  };
+    const intervalId = setInterval(() => {
+      setSecondsLeft(prev => {
+        if (prev > 1) return prev - 1
 
-  const phaseLabel =
-    phase === "work"
-      ? "WORK"
-      : phase === "rest"
-      ? "REST (between reps)"
-      : phase === "bigRest"
-      ? "BIG REST (between sets)"
-      : "DONE";
+        // when timer hits 0, move to next phase
+        handlePhaseEnd()
+        return prev
+      })
+    }, 1000)
+
+    return () => clearInterval(intervalId)
+  }, [running, phase, setIndex, repIndex])
+
+  const handlePhaseEnd = () => {
+    if (phase === PHASES.HANG) {
+      const isLastRepInSet = repIndex >= WORKOUT_CONFIG.REPS_PER_SET
+      const isLastSet = setIndex >= WORKOUT_CONFIG.SETS
+
+      if (isLastRepInSet) {
+        if (isLastSet) {
+          setPhase(PHASES.DONE)
+          setSecondsLeft(0)
+        } else {
+          setPhase(PHASES.LONG_REST)
+          setSecondsLeft(WORKOUT_CONFIG.REST_BETWEEN_SETS_SEC)
+        }
+      } else {
+        setPhase(PHASES.REST)
+        setSecondsLeft(WORKOUT_CONFIG.REST_BETWEEN_REPS_SEC)
+      }
+      return
+    }
+
+    if (phase === PHASES.REST) {
+      // back to hang, next rep
+      setPhase(PHASES.HANG)
+      setSecondsLeft(WORKOUT_CONFIG.HANG_SEC)
+      setRepIndex(r => r + 1)
+      return
+    }
+
+    if (phase === PHASES.LONG_REST) {
+      // new set, rep 1
+      setPhase(PHASES.HANG)
+      setSecondsLeft(WORKOUT_CONFIG.HANG_SEC)
+      setSetIndex(s => s + 1)
+      setRepIndex(1)
+      return
+    }
+  }
+
+  const toggleRunning = () => {
+    if (phase === PHASES.DONE) {
+      resetWorkout(true)
+      return
+    }
+    setRunning(prev => !prev)
+  }
+
+  const resetWorkout = (autoStart = false) => {
+    setPhase(PHASES.HANG)
+    setSecondsLeft(WORKOUT_CONFIG.HANG_SEC)
+    setSetIndex(1)
+    setRepIndex(1)
+    setRunning(autoStart)
+  }
+
+  const formatTime = sec => {
+    const m = Math.floor(sec / 60)
+    const s = sec % 60
+    if (m <= 0) return `${s}s`
+    return `${m}:${s.toString().padStart(2, '0')}`
+  }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Repeaters</Text>
+    <SafeAreaView style={styles.safe}>
+      <View style={styles.container}>
+        <Text style={styles.title}>Repeaters</Text>
 
-      <Text style={styles.subTitle}>
-        Set {currentSet}/{TOTAL_SETS} • Rep {Math.min(currentRep, REPS_PER_SET)}/
-        {REPS_PER_SET}
-      </Text>
+        <View style={styles.card}>
+          <Text style={styles.phase}>{phaseLabel}</Text>
+          <Text style={styles.time}>{formatTime(secondsLeft)}</Text>
 
-      <Text style={styles.phase}>{phaseLabel}</Text>
+          {phase !== PHASES.DONE && (
+            <Text style={styles.sub}>
+              Set {setIndex} / {WORKOUT_CONFIG.SETS} · Rep {repIndex} /{' '}
+              {WORKOUT_CONFIG.REPS_PER_SET}
+            </Text>
+          )}
 
-      <Text style={styles.timer}>{formatTime(secondsLeft)}</Text>
+          {phase === PHASES.DONE && (
+            <Text style={styles.sub}>Session complete 💪</Text>
+          )}
+        </View>
 
-      <View style={styles.buttonRow}>
-        <Pressable style={styles.button} onPress={handleStartPause}>
-          <Text style={styles.buttonText}>
-            {isRunning ? "Pause" : phase === "done" ? "Restart" : "Start"}
-          </Text>
-        </Pressable>
+        <View style={styles.buttons}>
+          <TouchableOpacity style={styles.primaryBtn} onPress={toggleRunning}>
+            <Text style={styles.btnText}>
+              {phase === PHASES.DONE ? 'Restart' : running ? 'Pause' : 'Start'}
+            </Text>
+          </TouchableOpacity>
 
-        <Pressable
-          style={[styles.button, styles.secondaryButton]}
-          onPress={resetAll}
-        >
-          <Text style={styles.buttonText}>Reset</Text>
-        </Pressable>
+          <TouchableOpacity
+            style={styles.secondaryBtn}
+            onPress={() => resetWorkout(false)}
+          >
+            <Text style={styles.btnText}>Reset</Text>
+          </TouchableOpacity>
+        </View>
+
+        <Text style={styles.note}>
+          Edit WORKOUT_CONFIG at the top to match your repeater timings
+          (sets, reps, hang, short rest, long rest).
+        </Text>
       </View>
+    </SafeAreaView>
+  )
+}
 
-      <Text style={styles.note}>
-        {WORK_SECONDS}s on / {REST_SECONDS}s off × {REPS_PER_SET} reps •{" "}
-        {TOTAL_SETS} sets • {BIG_REST_SECONDS / 60} min between sets
-      </Text>
-    </View>
-  );
+export default function RepeatersScreen() {
+  return (
+    <SafeAreaProvider>
+      <RepeatersTimer />
+      <Link href="/" style={styles.link}>
+        Home Page
+      </Link>
+    </SafeAreaProvider>
+  )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: 24,
-    paddingTop: 48,
-    alignItems: "center",
-    backgroundColor: "#020617",
-  },
+  safe: { flex: 1, backgroundColor: '#050509' },
+  container: { flex: 1, padding: 24, justifyContent: 'center' },
   title: {
     fontSize: 28,
-    fontWeight: "700",
-    color: "white",
-    marginBottom: 8,
+    fontWeight: '700',
+    color: 'white',
+    textAlign: 'center',
+    marginBottom: 24
   },
-  subTitle: {
-    fontSize: 16,
-    color: "#9ca3af",
-    marginBottom: 4,
+  card: {
+    backgroundColor: '#14141A',
+    borderRadius: 20,
+    paddingVertical: 28,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    marginBottom: 24
   },
   phase: {
     fontSize: 18,
-    color: "#fbbf24",
-    marginTop: 12,
-    marginBottom: 24,
+    fontWeight: '600',
+    color: '#c4c4d0',
+    marginBottom: 8,
+    letterSpacing: 1.5
   },
-  timer: {
-    fontSize: 60,
-    fontVariant: ["tabular-nums"],
-    color: "white",
-    marginVertical: 16,
+  time: {
+    fontSize: 64,
+    fontWeight: '800',
+    color: 'white'
   },
-  buttonRow: {
-    flexDirection: "row",
-    gap: 12,
-    marginTop: 24,
+  sub: {
+    marginTop: 10,
+    fontSize: 15,
+    color: '#a0a0b5'
   },
-  button: {
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-    borderRadius: 999,
-    backgroundColor: "#22c55e",
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 12
   },
-  secondaryButton: {
-    backgroundColor: "#6b7280",
+  primaryBtn: {
+    backgroundColor: '#2D6BFF',
+    paddingHorizontal: 30,
+    paddingVertical: 14,
+    borderRadius: 16
   },
-  buttonText: {
-    color: "white",
-    fontWeight: "600",
+  secondaryBtn: {
+    backgroundColor: '#25252f',
+    paddingHorizontal: 26,
+    paddingVertical: 14,
+    borderRadius: 16
+  },
+  btnText: {
+    color: 'white',
     fontSize: 16,
+    fontWeight: '600'
   },
   note: {
-    marginTop: 24,
+    marginTop: 18,
+    textAlign: 'center',
     fontSize: 13,
-    color: "#6b7280",
-    textAlign: "center",
+    color: '#8b8b98'
   },
-});
+  link: {
+    fontSize: 20,
+    color: 'white',
+    padding: 12,
+    textAlign: 'center',
+    backgroundColor: '#14141A'
+  }
+})

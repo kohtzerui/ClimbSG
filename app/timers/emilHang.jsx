@@ -189,7 +189,7 @@ function EmilHangsTimer() {
   )
 }
 
-export default function App() {
+export default function EmilHangsScreen() {
   return (
     <SafeAreaProvider>
       <EmilHangsTimer />
