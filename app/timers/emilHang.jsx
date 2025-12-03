@@ -6,7 +6,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 // ===== Emil Hangs config – tweak these to your protocol =====
 const WORKOUT_CONFIG = {
   INCLUDE_WARMUP: true,
-  WARMUP_SEC: 10, // 5 min warmup
+  WARMUP_SEC: 300, // 5 min warmup
 
   SETS: 3, // number of sets
   REPS_PER_SET: 6, // hangs per set
