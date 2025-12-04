@@ -3,40 +3,7 @@ import React, { useMemo } from 'react'
 import { View, Text, StyleSheet, SectionList } from 'react-native'
 import { SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context'
 import { Link } from 'expo-router'
-
-// ===== Singapore comps – replace / expand as needed =====
-const SINGAPORE_EVENTS = [
-  {
-    id: 'ba-2025',
-    name: 'BoulderActive 2025',
-    date: '2025-02-08', // YYYY-MM-DD
-    venue: 'Our Tampines Hub',
-    categories: ['Bouldering', 'Varsity'],
-    organiser: 'NUS Climbing',
-    notes: 'Part of SNBL circuit · Youth & Open',
-    regStatus: 'Registration opens TBC'
-  },
-  {
-    id: 'gravical-2025',
-    name: 'SMU Gravical 2025',
-    date: '2025-03-15',
-    venue: 'SMU Campus Green',
-    categories: ['Bouldering'],
-    organiser: 'SMU Climb Team',
-    notes: 'Student & Open categories',
-    regStatus: 'Details TBC'
-  },
-  {
-    id: 'lead-speed-2025',
-    name: 'National Lead & Speed Championships 2025',
-    date: '2025-05-24',
-    venue: 'TBC',
-    categories: ['Lead', 'Speed'],
-    organiser: 'Singapore Climbing Federation',
-    notes: 'National team selection',
-    regStatus: 'By qualification / invite'
-  }
-]
+import { SINGAPORE_EVENTS_2026 } from './eventData/singapore2026'
 
 // ===== Inner screen component =====
 function SingaporeCalendar() {
@@ -44,7 +11,7 @@ function SingaporeCalendar() {
   const sections = useMemo(() => {
     const byMonth = {}
 
-    SINGAPORE_EVENTS.forEach(event => {
+    SINGAPORE_EVENTS_2026.forEach(event => {
       const d = new Date(event.date)
       const label = d.toLocaleString('en-SG', { month: 'long', year: 'numeric' })
       if (!byMonth[label]) byMonth[label] = []
@@ -125,7 +92,7 @@ function SingaporeCalendar() {
         }
       />
 
-      <Link href="/calendars" style={styles.link}>
+      <Link href="/calendar" style={styles.link}>
         ← All calendars
       </Link>
     </SafeAreaView>

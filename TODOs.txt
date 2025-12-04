@@ -1,6 +1,50 @@
--Start of the Calendar Portion of the App
--Implement Heavy Finger Board
--Implement ARC Timer
+Retrievables
+-Get Singapore Local Comp Data from SSCMF
+-(Once Implemented Singapore Data 2026)
+> Ask if they know anyone with SEA Data
+
+Coding Tasks
+-Implement Heavy Finger Board **
+-Implement ARC Timer **
 -Implement 4x4 Circuit Timer
 -Implement Isometric Timer
 -Include a description of why for each timer
+-Include filters For the events
+
+2026 Events
+
+Jan
+
+Feb 
+BFF Vengafest 4-7
+BP Single Mingler 14
+
+March 
+Lighthouse Phoenix 8 
+BP Inter-Varsity Championship Date 14
+
+April
+BFF Verticrux (speed) 26
+
+May
+GU Defvity 16-17
+
+June 
+BP Celebrations 19-21
+
+July
+GU Klip 17-19
+
+August
+Lighthouse ignite 28-30
+
+Sept
+BP Setter Day 26
+
+Oct  
+
+Nov
+GU GUBC 13-15
+BFF Mini Crusher 14-15
+
+Dec
