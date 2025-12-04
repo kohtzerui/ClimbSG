@@ -8,11 +8,11 @@ export const SINGAPORE_EVENTS_2026 = [
       series: 'BFF',
       startDate: '2026-02-04',
       endDate: '2026-02-07',
-      venue: '',
-      categories: [],
+      venue: 'BFF Bendemeer',
+      categories: ['YOUTH A', 'YOUTH B', 'YOUTH C', 'YOUTH D', 'YOUTH E', 'YOUTH F', 'TEAM'],
       organiser: '',
-      notes: '',
-      regStatus: 'TBC'
+      notes: 'Team (U13, Mixed Age, Veteran)',
+      regStatus: 'Registration is not open yet!'
     },
     {
       id: '2026-bp-single-mingler',
@@ -20,11 +20,11 @@ export const SINGAPORE_EVENTS_2026 = [
       series: 'BP',
       startDate: '2026-02-14',
       endDate: '2026-02-14',
-      venue: '',
-      categories: [],
+      venue: 'BP Sembawang',
+      categories: ['FUN'],
       organiser: '',
       notes: '',
-      regStatus: 'TBC'
+      regStatus: 'Registration is not open yet!'
     },
   
     // March
@@ -34,11 +34,11 @@ export const SINGAPORE_EVENTS_2026 = [
       series: 'Lighthouse',
       startDate: '2026-03-08',
       endDate: '2026-03-08',
-      venue: '',
+      venue: 'Lighthouse',
       categories: [],
       organiser: '',
       notes: '',
-      regStatus: 'TBC'
+      regStatus: 'Registration is not open yet!'
     },
     {
       id: '2026-bp-inter-varsity',
@@ -46,7 +46,7 @@ export const SINGAPORE_EVENTS_2026 = [
       series: 'BP',
       startDate: '2026-03-14',
       endDate: '2026-03-14',
-      venue: '',
+      venue: 'Boulder Planet Sembwang',
       categories: [],
       organiser: '',
       notes: '',
@@ -60,7 +60,7 @@ export const SINGAPORE_EVENTS_2026 = [
       series: 'BFF',
       startDate: '2026-04-26',
       endDate: '2026-04-26',
-      venue: '',
+      venue: 'BFF Tampines Hub',
       categories: [],
       organiser: '',
       notes: '',
@@ -84,15 +84,15 @@ export const SINGAPORE_EVENTS_2026 = [
     // June
     {
       id: '2026-transcend',
-      name: 'Transcend',
+      name: 'Transcend 2026',
       series: 'Transcend',
       startDate: '2026-06-19',
       endDate: '2026-06-21',
-      venue: '',
-      categories: [],
+      venue: 'HeartBeat@Bedok',
+      categories: ['PROMOTIONAL', 'TEAM'],
       organiser: '',
       notes: '',
-      regStatus: 'TBC'
+      regStatus: 'Registration is not open yet!'
     },
     {
       id: '2026-bp-celebrations',
@@ -101,10 +101,10 @@ export const SINGAPORE_EVENTS_2026 = [
       startDate: '2026-06-19',
       endDate: '2026-06-21',
       venue: '',
-      categories: [],
+      categories: ['FUN'],
       organiser: '',
       notes: '',
-      regStatus: 'TBC'
+      regStatus: 'Registration is not open yet!'
     },
   
     // July
@@ -114,11 +114,11 @@ export const SINGAPORE_EVENTS_2026 = [
       series: 'GU',
       startDate: '2026-07-17',
       endDate: '2026-07-19',
-      venue: '',
+      venue: 'Ground Up Climbing Gym',
       categories: [],
       organiser: '',
       notes: '',
-      regStatus: 'TBC'
+      regStatus: 'Registration is not open yet!'
     },
   
     // August
@@ -128,11 +128,11 @@ export const SINGAPORE_EVENTS_2026 = [
       series: 'Lighthouse',
       startDate: '2026-08-28',
       endDate: '2026-08-30',
-      venue: '',
+      venue: 'Light House',
       categories: [],
       organiser: '',
       notes: '',
-      regStatus: 'TBC'
+      regStatus: 'Registration is not open yet!'
     },
   
     // September
@@ -143,10 +143,10 @@ export const SINGAPORE_EVENTS_2026 = [
       startDate: '2026-09-26',
       endDate: '2026-09-26',
       venue: '',
-      categories: [],
+      categories: ['FUN'],
       organiser: '',
-      notes: '',
-      regStatus: 'TBC'
+      notes: 'For aspiring route setters in Singapore',
+      regStatus: 'Registration is not open yet!'
     },
   
     // November
@@ -156,11 +156,11 @@ export const SINGAPORE_EVENTS_2026 = [
       series: 'GU',
       startDate: '2026-11-13',
       endDate: '2026-11-15',
-      venue: '',
+      venue: 'Ground Up Climbing Gym',
       categories: [],
       organiser: '',
-      notes: '',
-      regStatus: 'TBC'
+      notes: 'Calling for all Comp Kid Crushers!',
+      regStatus: 'Registration is not open yet!'
     },
     {
       id: '2026-bff-mini-crusher',
@@ -168,11 +168,11 @@ export const SINGAPORE_EVENTS_2026 = [
       series: 'BFF',
       startDate: '2026-11-14',
       endDate: '2026-11-15',
-      venue: '',
-      categories: [],
+      venue: 'BFF Bendemeer',
+      categories: ['FUN'],
       organiser: '',
-      notes: '',
-      regStatus: 'TBC'
+      notes: 'U7, U8, Combines Boulder, Top Rope and Speed',
+      regStatus: 'Registration is not open yet!'
     },
   
     // December
@@ -182,11 +182,11 @@ export const SINGAPORE_EVENTS_2026 = [
       series: 'BoulderActive',
       startDate: '2026-12-04',
       endDate: '2026-12-06',
-      venue: '',
-      categories: [],
+      venue: 'City Square Mall',
+      categories: ['PROMOTIONAL', 'TEAM'],
       organiser: '',
-      notes: '',
-      regStatus: 'TBC'
+      notes: 'NOT CONFIRMED',
+      regStatus: 'Registration is not open yet!'
     }
   ]
   

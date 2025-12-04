@@ -12,7 +12,7 @@ function SingaporeCalendar() {
     const byMonth = {}
 
     SINGAPORE_EVENTS_2026.forEach(event => {
-      const d = new Date(event.date)
+      const d = new Date(event.startDate)
       const label = d.toLocaleString('en-SG', { month: 'long', year: 'numeric' })
       if (!byMonth[label]) byMonth[label] = []
       byMonth[label].push(event)
@@ -33,7 +33,7 @@ function SingaporeCalendar() {
   }, [])
 
   const renderEvent = ({ item }) => {
-    const d = new Date(item.date)
+    const d = new Date(item.startDate)
     const day = d.getDate()
     const weekday = d.toLocaleString('en-SG', { weekday: 'long' })
     const month = d.toLocaleString('en-SG', { month: 'long' })
@@ -76,7 +76,7 @@ function SingaporeCalendar() {
     <SafeAreaView style={styles.safe}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Singapore Climbing Comps</Text>
-        <Text style={styles.headerSubtitle}>Upcoming events · 2025–2026</Text>
+        <Text style={styles.headerSubtitle}>Upcoming events · 2026-2027</Text>
       </View>
 
       <SectionList
