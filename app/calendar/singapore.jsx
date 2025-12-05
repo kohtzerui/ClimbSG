@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, SectionList } from 'react-native'
 import { SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context'
 import { Link } from 'expo-router'
 import { SINGAPORE_EVENTS_2026 } from './eventData/singapore2026'
+import { Image } from 'react-native'
 
 // ===== Inner screen component =====
 function SingaporeCalendar() {
@@ -27,10 +28,51 @@ function SingaporeCalendar() {
       .map(title => ({
         title,
         data: byMonth[title].sort(
-          (a, b) => new Date(a.date) - new Date(b.date)
+          (a, b) => new Date(a.startDate) - new Date(b.endDate)
         )
       }))
   }, [])
+
+  const formatDateRange = (startDate, endDate) => {
+    if (!endDate || startDate === endDate) {
+      const d = new Date(startDate)
+      const day = d.getDate()
+      const monthYear = d.toLocaleString('en-SG', {
+        month: 'long',
+        year: 'numeric'
+      })
+      return `${day} ${monthYear}` // "4 February 2026"
+    }
+  
+    const start = new Date(startDate)
+    const end = new Date(endDate)
+  
+    const sameMonth =
+      start.getFullYear() === end.getFullYear() &&
+      start.getMonth() === end.getMonth()
+  
+    if (sameMonth) {
+      const monthYear = start.toLocaleString('en-SG', {
+        month: 'long',
+        year: 'numeric'
+      })
+      return `${start.getDate()}–${end.getDate()} ${monthYear}` // "4–7 February 2026"
+    }
+  
+    const startLabel = start.toLocaleString('en-SG', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
+    })
+    const endLabel = end.toLocaleString('en-SG', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
+    })
+  
+    return `${startLabel} – ${endLabel}`
+  }
+  
 
   const renderEvent = ({ item }) => {
     const d = new Date(item.startDate)
@@ -38,10 +80,25 @@ function SingaporeCalendar() {
     const weekday = d.toLocaleString('en-SG', { weekday: 'long' })
     const month = d.toLocaleString('en-SG', { month: 'long' })
 
+    // For the logo circle – use series ("BFF", "BP", etc.) or fallback
+    const logoLabel = item.series
+    ? String(item.series).toUpperCase().slice(0, 3)
+    : 'CL'
+    const logoSource = item.logo || null
+
+    const dateRangeLabel = formatDateRange(item.startDate, item.endDate)
+
     return (
       <View style={styles.eventRow}>
-        {/* Date block */}
-        <View style={styles.dateBlock}>
+        {/* Logo + Date block */}
++      <View style={styles.dateBlock}>
+          <View style={styles.logoCircle}>
+            {logoSource ? (
+              <Image source={logoSource} style={styles.logoImage} />
+            ) : (
+              <Text style={styles.logoText}>{logoLabel}</Text>
+            )}
+          </View>
           <Text style={styles.dateDay}>{day}</Text>
           <Text style={styles.dateMonth}>{month}</Text>
           <Text style={styles.dateWeekday}>{weekday}</Text>
@@ -223,5 +280,31 @@ const styles = StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
     borderColor: '#27272f',
     backgroundColor: '#0b0b12'
-  }
+  },
+  logoCircle: {
+    //#111827
+    width: 40,
+    height: 40,
+    borderRadius: 999,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 8
+  },
+  logoText: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#e5e7eb'
+  },
+  logoImage: {
+    width: 50,
+    height: 50,
+    borderRadius: 999
+  },
+  eventDateRange: {
+    marginTop: 4,
+    fontSize: 11,
+    color: '#e5e7eb'
+  },
+
 })

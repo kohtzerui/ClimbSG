@@ -1,7 +1,22 @@
 // singapore-2026.js
 
 export const SINGAPORE_EVENTS_2026 = [
-    // February
+  // January 
+  {
+      id: '2026-fitbloc-unbloc',
+      name: 'Unbloc Final Evaluation',
+      series: 'Fitbloc',
+      startDate: '2026-01-31',
+      endDate: '2026-02-01',
+      venue: 'Fitbloc 3.0',
+      categories: ['FUN'],
+      organiser: '',
+      notes: 'Location to be continued ;)',
+      regStatus: 'Registration closed',
+      logo: require('./eventLogo/fitblocLogo.png')
+    },
+  
+  // February
     {
       id: '2026-bff-vengafest',
       name: 'BFF Vengafest',
@@ -12,7 +27,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: ['YOUTH A', 'YOUTH B', 'YOUTH C', 'YOUTH D', 'YOUTH E', 'YOUTH F', 'TEAM'],
       organiser: '',
       notes: 'Team (U13, Mixed Age, Veteran)',
-      regStatus: 'Registration is not open yet!'
+      regStatus: 'Registration is not open yet!',
+      logo: require('./eventLogo/bffLogo.png')
     },
     {
       id: '2026-bp-single-mingler',
@@ -24,7 +40,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: ['FUN'],
       organiser: '',
       notes: '',
-      regStatus: 'Registration is not open yet!'
+      regStatus: 'Registration is not open yet!',
+      logo: require('./eventLogo/boulderplanetLogo.png')
     },
   
     // March
@@ -38,7 +55,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: [],
       organiser: '',
       notes: '',
-      regStatus: 'Registration is not open yet!'
+      regStatus: 'Registration is not open yet!',
+      logo: require('./eventLogo/lighthouseLogo.png')
     },
     {
       id: '2026-bp-inter-varsity',
@@ -50,7 +68,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: [],
       organiser: '',
       notes: '',
-      regStatus: 'TBC'
+      regStatus: 'TBC',
+      logo: require('./eventLogo/boulderplanetLogo.png')
     },
   
     // April
@@ -64,7 +83,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: [],
       organiser: '',
       notes: '',
-      regStatus: 'TBC'
+      regStatus: 'TBC',
+      logo: require('./eventLogo/bffLogo.png')
     },
   
     // May
@@ -78,7 +98,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: [],
       organiser: '',
       notes: '',
-      regStatus: 'TBC'
+      regStatus: 'TBC',
+      logo: require('./eventLogo/groundupLogo.png')
     },
   
     // June
@@ -92,7 +113,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: ['PROMOTIONAL', 'TEAM'],
       organiser: '',
       notes: '',
-      regStatus: 'Registration is not open yet!'
+      regStatus: 'Registration is not open yet!',
+      logo: require('./eventLogo/transendLogo.png')
     },
     {
       id: '2026-bp-celebrations',
@@ -104,7 +126,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: ['FUN'],
       organiser: '',
       notes: '',
-      regStatus: 'Registration is not open yet!'
+      regStatus: 'Registration is not open yet!',
+      logo: require('./eventLogo/boulderplanetLogo.png')
     },
   
     // July
@@ -118,7 +141,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: [],
       organiser: '',
       notes: '',
-      regStatus: 'Registration is not open yet!'
+      regStatus: 'Registration is not open yet!',
+      logo: require('./eventLogo/groundupLogo.png')
     },
   
     // August
@@ -132,7 +156,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: [],
       organiser: '',
       notes: '',
-      regStatus: 'Registration is not open yet!'
+      regStatus: 'Registration is not open yet!',
+      logo: require('./eventLogo/lighthouseLogo.png')
     },
   
     // September
@@ -146,7 +171,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: ['FUN'],
       organiser: '',
       notes: 'For aspiring route setters in Singapore',
-      regStatus: 'Registration is not open yet!'
+      regStatus: 'Registration is not open yet!',
+      logo: require('./eventLogo/boulderplanetLogo.png')
     },
   
     // November
@@ -160,7 +186,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: [],
       organiser: '',
       notes: 'Calling for all Comp Kid Crushers!',
-      regStatus: 'Registration is not open yet!'
+      regStatus: 'Registration is not open yet!',
+      logo: require('./eventLogo/groundupLogo.png')
     },
     {
       id: '2026-bff-mini-crusher',
@@ -172,7 +199,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: ['FUN'],
       organiser: '',
       notes: 'U7, U8, Combines Boulder, Top Rope and Speed',
-      regStatus: 'Registration is not open yet!'
+      regStatus: 'Registration is not open yet!',
+      logo: require('./eventLogo/bffLogo.png')
     },
   
     // December
@@ -186,7 +214,8 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: ['PROMOTIONAL', 'TEAM'],
       organiser: '',
       notes: 'NOT CONFIRMED',
-      regStatus: 'Registration is not open yet!'
+      regStatus: 'Registration is not open yet!',
+      logo: require('./eventLogo/boulderactiveLogo.png')
     }
   ]
   
