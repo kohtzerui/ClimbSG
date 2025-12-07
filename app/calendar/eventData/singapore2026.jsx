@@ -1,7 +1,18 @@
-// singapore-2026.js
-
 export const SINGAPORE_EVENTS_2026 = [
   // January 
+  {
+    id: '2026-bp-benchmark-5',
+    name: 'BP Benchmark 5',
+    series: 'Boulder Planet',
+    startDate: '2026-01-10',
+    endDate: '2026-01-11',
+    venue: 'Boulder Planet Sembawang',
+    categories: ['FUN'],
+    organiser: 'BoulderPlanet',
+    notes: 'Get a nice pin to shower you can send BP5s!',
+    regStatus: '**No registration required',
+    logo: require('./eventLogo/boulderplanetLogo.png')
+  },
   {
       id: '2026-fitbloc-unbloc',
       name: 'Unbloc Final Evaluation',
@@ -9,10 +20,10 @@ export const SINGAPORE_EVENTS_2026 = [
       startDate: '2026-01-31',
       endDate: '2026-02-01',
       venue: 'Fitbloc 3.0',
-      categories: ['FUN'],
-      organiser: '',
+      categories: ['FINALS'],
+      organiser: 'Fitbloc',
       notes: 'Location to be continued ;)',
-      regStatus: 'Registration closed',
+      regStatus: '**No registration required',
       logo: require('./eventLogo/fitblocLogo.png')
     },
   
@@ -25,7 +36,7 @@ export const SINGAPORE_EVENTS_2026 = [
       endDate: '2026-02-07',
       venue: 'BFF Bendemeer',
       categories: ['YOUTH A', 'YOUTH B', 'YOUTH C', 'YOUTH D', 'YOUTH E', 'YOUTH F', 'TEAM'],
-      organiser: '',
+      organiser: 'BFF Climbing',
       notes: 'Team (U13, Mixed Age, Veteran)',
       regStatus: 'Registration is not open yet!',
       logo: require('./eventLogo/bffLogo.png')
@@ -33,13 +44,13 @@ export const SINGAPORE_EVENTS_2026 = [
     {
       id: '2026-bp-single-mingler',
       name: 'BP Single Mingler',
-      series: 'BP',
+      series: 'Boulder Planet',
       startDate: '2026-02-14',
       endDate: '2026-02-14',
-      venue: 'BP Sembawang',
+      venue: 'Boulder Planet Sembawang',
       categories: ['FUN'],
-      organiser: '',
-      notes: '',
+      organiser: 'Boulder Planet',
+      notes: 'Line up to MINGLE o.O',
       regStatus: 'Registration is not open yet!',
       logo: require('./eventLogo/boulderplanetLogo.png')
     },
@@ -53,7 +64,7 @@ export const SINGAPORE_EVENTS_2026 = [
       endDate: '2026-03-08',
       venue: 'Lighthouse',
       categories: [],
-      organiser: '',
+      organiser: 'Lighthouse',
       notes: '',
       regStatus: 'Registration is not open yet!',
       logo: require('./eventLogo/lighthouseLogo.png')
@@ -61,13 +72,13 @@ export const SINGAPORE_EVENTS_2026 = [
     {
       id: '2026-bp-inter-varsity',
       name: 'BP Inter-Varsity Championship',
-      series: 'BP',
+      series: 'Boulder Planet',
       startDate: '2026-03-14',
       endDate: '2026-03-14',
-      venue: 'Boulder Planet Sembwang',
+      venue: 'Boulder Planet Sembawang',
       categories: [],
       organiser: '',
-      notes: '',
+      notes: 'Strongest Uni on the block!',
       regStatus: 'TBC',
       logo: require('./eventLogo/boulderplanetLogo.png')
     },
@@ -80,10 +91,10 @@ export const SINGAPORE_EVENTS_2026 = [
       startDate: '2026-04-26',
       endDate: '2026-04-26',
       venue: 'BFF Tampines Hub',
-      categories: [],
-      organiser: '',
-      notes: '',
-      regStatus: 'TBC',
+      categories: ['YOUTH D', 'YOUTH E', 'YOUTH F', 'TEAM'],
+      organiser: 'BFF Climbing',
+      notes: 'Team (U17, General)',
+      regStatus: 'Registration is not open yet!',
       logo: require('./eventLogo/bffLogo.png')
     },
   
@@ -94,12 +105,25 @@ export const SINGAPORE_EVENTS_2026 = [
       series: 'GU',
       startDate: '2026-05-16',
       endDate: '2026-05-17',
-      venue: '',
+      venue: 'Ground Up Climbing Gym',
       categories: [],
-      organiser: '',
+      organiser: 'Ground Up',
       notes: '',
-      regStatus: 'TBC',
+      regStatus: 'Registration is not open yet!',
       logo: require('./eventLogo/groundupLogo.png')
+    },  
+    {
+      id: '2026-bp-benchmark-6',
+      name: 'BP Benchmark 6',
+      series: 'Boulder Planet',
+      startDate: '2026-05-16',
+      endDate: '2026-05-17',
+      venue: 'Boulder Planet Sembawang',
+      categories: ['FUN'],
+      organiser: 'BoulderPlanet',
+      notes: 'Get a nice pin to shower you can send BP6s!',
+      regStatus: 'No registration required',
+      logo: require('./eventLogo/boulderplanetLogo.png')
     },
   
     // June
@@ -111,18 +135,18 @@ export const SINGAPORE_EVENTS_2026 = [
       endDate: '2026-06-21',
       venue: 'HeartBeat@Bedok',
       categories: ['PROMOTIONAL', 'TEAM'],
-      organiser: '',
-      notes: '',
+      organiser: 'NTU Climbing Team',
+      notes: 'NOT CONFIRMED YET',
       regStatus: 'Registration is not open yet!',
       logo: require('./eventLogo/transendLogo.png')
     },
     {
       id: '2026-bp-celebrations',
       name: 'BP Celebrations',
-      series: 'BP',
+      series: 'Boulder Planet',
       startDate: '2026-06-19',
       endDate: '2026-06-21',
-      venue: '',
+      venue: 'Boulder Planet Sembawang',
       categories: ['FUN'],
       organiser: '',
       notes: '',
@@ -131,6 +155,19 @@ export const SINGAPORE_EVENTS_2026 = [
     },
   
     // July
+    {
+      id: '2026-bp-benchmark-7',
+      name: 'BP Benchmark 7',
+      series: 'Boulder Planet',
+      startDate: '2026-07-11',
+      endDate: '2026-07-12',
+      venue: 'Boulder Planet Sembawang',
+      categories: ['FUN'],
+      organiser: 'BoulderPlanet',
+      notes: 'Get a nice pin to shower you can send BP7s!',
+      regStatus: 'No registration required',
+      logo: require('./eventLogo/boulderplanetLogo.png')
+    },
     {
       id: '2026-gu-klip',
       name: 'GU Klip',
@@ -164,12 +201,12 @@ export const SINGAPORE_EVENTS_2026 = [
     {
       id: '2026-bp-setter-day',
       name: 'BP Setter Day',
-      series: 'BP',
+      series: 'Boulder Planet',
       startDate: '2026-09-26',
       endDate: '2026-09-26',
-      venue: '',
+      venue: 'Boulder Planet Sembawang',
       categories: ['FUN'],
-      organiser: '',
+      organiser: 'Boulder Planet',
       notes: 'For aspiring route setters in Singapore',
       regStatus: 'Registration is not open yet!',
       logo: require('./eventLogo/boulderplanetLogo.png')
@@ -178,16 +215,29 @@ export const SINGAPORE_EVENTS_2026 = [
     // November
     {
       id: '2026-gu-gubc',
-      name: 'GU GUBC',
+      name: 'GU Bouldering Cup',
       series: 'GU',
       startDate: '2026-11-13',
       endDate: '2026-11-15',
       venue: 'Ground Up Climbing Gym',
       categories: [],
-      organiser: '',
+      organiser: 'Ground Up',
       notes: 'Calling for all Comp Kid Crushers!',
       regStatus: 'Registration is not open yet!',
       logo: require('./eventLogo/groundupLogo.png')
+    },
+    {
+      id: '2026-bp-benchmark-8',
+      name: 'BP Benchmark 8',
+      series: 'Boulder Planet',
+      startDate: '2026-11-14',
+      endDate: '2026-11-15',
+      venue: 'Boulder Planet Sembawang',
+      categories: ['FUN'],
+      organiser: 'BoulderPlanet',
+      notes: 'Get a nice pin to shower you can send BP8s!',
+      regStatus: 'No registration required',
+      logo: require('./eventLogo/boulderplanetLogo.png')
     },
     {
       id: '2026-bff-mini-crusher',
@@ -212,7 +262,7 @@ export const SINGAPORE_EVENTS_2026 = [
       endDate: '2026-12-06',
       venue: 'City Square Mall',
       categories: ['PROMOTIONAL', 'TEAM'],
-      organiser: '',
+      organiser: 'NUS Climbing Team',
       notes: 'NOT CONFIRMED',
       regStatus: 'Registration is not open yet!',
       logo: require('./eventLogo/boulderactiveLogo.png')

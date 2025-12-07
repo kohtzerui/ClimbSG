@@ -91,7 +91,7 @@ function SingaporeCalendar() {
     return (
       <View style={styles.eventRow}>
         {/* Logo + Date block */}
-+      <View style={styles.dateBlock}>
+      <View style={styles.dateBlock}>
           <View style={styles.logoCircle}>
             {logoSource ? (
               <Image source={logoSource} style={styles.logoImage} />
@@ -283,8 +283,8 @@ const styles = StyleSheet.create({
   },
   logoCircle: {
     //#111827
-    width: 40,
-    height: 40,
+    width: 49,
+    height: 49,
     borderRadius: 999,
     backgroundColor: 'white',
     alignItems: 'center',
