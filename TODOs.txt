@@ -11,4 +11,4 @@ Coding Tasks
 -Implement Isometric Timer
 -Include a description of why for each timer
 -Include filters For the events
-- Shift Logos out to assest in get rid of warnings for data
+- Shift Logos out to assest in get rid of warnings for datas

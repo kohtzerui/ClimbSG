@@ -11,7 +11,7 @@ export const SINGAPORE_EVENTS_2026 = [
     organiser: 'BoulderPlanet',
     notes: 'Get a nice pin to shower you can send BP5s!',
     regStatus: '**No registration available',
-    logo: require('./eventLogo/boulderplanetLogo.png')
+    logo: require('../assets/singapore2026logos/boulderplanetLogo.png')
   },
   {
       id: '2026-fitbloc-unbloc',
@@ -24,7 +24,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'Fitbloc',
       notes: 'Location to be continued ;)',
       regStatus: '**No registration available',
-      logo: require('./eventLogo/fitblocLogo.png')
+      logo: require('../assets/singapore2026logos/fitblocLogo.png')
     },
   
   // February
@@ -39,7 +39,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'BFF Climbing',
       notes: 'Team (U13, Mixed Age, Veteran)',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/bffLogo.png')
+      logo: require('../assets/singapore2026logos/bffLogo.png')
     },
     {
       id: '2026-bp-single-mingler',
@@ -52,7 +52,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'Boulder Planet',
       notes: 'Line up to MINGLE o.O',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/boulderplanetLogo.png')
+      logo: require('../assets/singapore2026logos/boulderplanetLogo.png')
     },
   
     // March
@@ -67,7 +67,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'Lighthouse',
       notes: 'Women only Bouldering Comp - Novice & Intermediate',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/lighthouseLogo.png')
+      logo: require('../assets/singapore2026logos/lighthouseLogo.png')
     },
     {
       id: '2026-bp-inter-varsity',
@@ -80,7 +80,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'Boulder Planet',
       notes: 'Strongest Uni on the block!',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/boulderplanetLogo.png')
+      logo: require('../assets/singapore2026logos/boulderplanetLogo.png')
     },
   
     // April
@@ -95,7 +95,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'BFF Climbing',
       notes: 'Team (U17, General)',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/bffLogo.png')
+      logo: require('../assets/singapore2026logos/bffLogo.png')
     },
   
     // May
@@ -110,7 +110,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'Ground Up',
       notes: 'Auto belay Carnival (U13, Individual, Above 40)',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/groundupLogo.png')
+      logo: require('../assets/singapore2026logos/groundupLogo.png')
     },  
     {
       id: '2026-bp-benchmark-6',
@@ -123,7 +123,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'BoulderPlanet',
       notes: 'Get a nice pin to shower you can send BP6s!',
       regStatus: 'No registration required',
-      logo: require('./eventLogo/boulderplanetLogo.png')
+      logo: require('../assets/singapore2026logos/boulderplanetLogo.png')
     },
   
     // June
@@ -138,7 +138,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'NTU Climbing Team',
       notes: 'NOT CONFIRMED YET',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/transendLogo.png')
+      logo: require('../assets/singapore2026logos/transendLogo.png')
     },
     {
       id: '2026-bp-celebrations',
@@ -151,7 +151,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: '',
       notes: '',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/boulderplanetLogo.png')
+      logo: require('../assets/singapore2026logos/boulderplanetLogo.png')
     },
   
     // July
@@ -166,7 +166,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'BoulderPlanet',
       notes: 'Get a nice pin to shower you can send BP7s!',
       regStatus: 'No registration required',
-      logo: require('./eventLogo/boulderplanetLogo.png')
+      logo: require('../assets/singapore2026logos/boulderplanetLogo.png')
     },
     {
       id: '2026-gu-klip',
@@ -179,7 +179,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'Ground Up',
       notes: 'Ground Up Lead Climbing Competition',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/groundupLogo.png')
+      logo: require('../assets/singapore2026logos/groundupLogo.png')
     },
   
     // August
@@ -194,7 +194,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'Lighthouse',
       notes: 'Citizen (Under 25, 25-35, Above 35)',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/lighthouseLogo.png')
+      logo: require('../assets/singapore2026logos/lighthouseLogo.png')
     },
   
     // September
@@ -209,7 +209,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'Boulder Planet',
       notes: 'For aspiring route setters in Singapore',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/boulderplanetLogo.png')
+      logo: require('../assets/singapore2026logos/boulderplanetLogo.png')
     },
   
     // November
@@ -224,7 +224,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'Ground Up',
       notes: 'Calling for all Comp Kid Crushers! Masters (Above 35) also included.',
       regStatus: 'Registration is not open yet!', 
-      logo: require('./eventLogo/groundupLogo.png')
+      logo: require('../assets/singapore2026logos/groundupLogo.png')
     },
     {
       id: '2026-bp-benchmark-8',
@@ -237,7 +237,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'Boulder Planet',
       notes: 'Get a nice pin to shower you can send BP8s!',
       regStatus: 'No registration required',
-      logo: require('./eventLogo/boulderplanetLogo.png')
+      logo: require('../assets/singapore2026logos/boulderplanetLogo.png')
     },
     {
       id: '2026-bff-mini-crusher',
@@ -250,7 +250,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'BFF Climbing',
       notes: 'U7, U8, Combines Boulder, Top Rope and Speed',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/bffLogo.png')
+      logo: require('../assets/singapore2026logos/bffLogo.png')
     },
   
     // December
@@ -265,7 +265,7 @@ export const SINGAPORE_EVENTS_2026 = [
       organiser: 'NUS Climbing Team',
       notes: 'NOT CONFIRMED',
       regStatus: 'Registration is not open yet!',
-      logo: require('./eventLogo/boulderactiveLogo.png')
+      logo: require('../assets/singapore2026logos/boulderactiveLogo.png')
     }
   ]
   

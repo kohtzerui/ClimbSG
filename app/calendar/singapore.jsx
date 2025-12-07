@@ -3,7 +3,7 @@ import React, { useMemo } from 'react'
 import { View, Text, StyleSheet, SectionList } from 'react-native'
 import { SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context'
 import { Link } from 'expo-router'
-import { SINGAPORE_EVENTS_2026 } from './eventData/singapore2026'
+import { SINGAPORE_EVENTS_2026 } from '../../assets/singapore2026logos'
 import { Image } from 'react-native'
 
 // ===== Inner screen component =====
