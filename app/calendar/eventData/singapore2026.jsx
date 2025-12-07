@@ -10,7 +10,7 @@ export const SINGAPORE_EVENTS_2026 = [
     categories: ['FUN'],
     organiser: 'BoulderPlanet',
     notes: 'Get a nice pin to shower you can send BP5s!',
-    regStatus: '**No registration required',
+    regStatus: '**No registration available',
     logo: require('./eventLogo/boulderplanetLogo.png')
   },
   {
@@ -23,7 +23,7 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: ['FINALS'],
       organiser: 'Fitbloc',
       notes: 'Location to be continued ;)',
-      regStatus: '**No registration required',
+      regStatus: '**No registration available',
       logo: require('./eventLogo/fitblocLogo.png')
     },
   
@@ -79,7 +79,7 @@ export const SINGAPORE_EVENTS_2026 = [
       categories: ["FINALS"],
       organiser: 'Boulder Planet',
       notes: 'Strongest Uni on the block!',
-      regStatus: 'TBC',
+      regStatus: 'Registration is not open yet!',
       logo: require('./eventLogo/boulderplanetLogo.png')
     },
   
@@ -106,9 +106,9 @@ export const SINGAPORE_EVENTS_2026 = [
       startDate: '2026-05-16',
       endDate: '2026-05-17',
       venue: 'Ground Up Climbing Gym',
-      categories: [],
+      categories: ['TEAMS', 'FUN'],
       organiser: 'Ground Up',
-      notes: '',
+      notes: 'Auto belay Carnival (U13, Individual, Above 40)',
       regStatus: 'Registration is not open yet!',
       logo: require('./eventLogo/groundupLogo.png')
     },  
