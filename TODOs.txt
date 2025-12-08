@@ -1,6 +1,6 @@
 Retrievables
-- IMPLEMENT THE LOGO ICON
 - IMPLEMENT THE ACCURATE DATE FOR EVENT MORE THAN 1 DAY
+
 
 Coding Tasks
 -Implement Heavy Finger Board **
@@ -13,3 +13,4 @@ Coding Tasks
 -Touch up Aesthetics for the App before Launch
 
 - Oraganise the data for the App
+- Shift Logos out to assest in get rid of warnings for datas
