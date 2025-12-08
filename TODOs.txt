@@ -1,6 +1,4 @@
 Retrievables
--Get Singapore Local Comp Data from SSCMF (Meet with Keira to manage)
-> Ask if they know anyone with SEA Data
 - IMPLEMENT THE LOGO ICON
 - IMPLEMENT THE ACCURATE DATE FOR EVENT MORE THAN 1 DAY
 
@@ -11,3 +9,7 @@ Coding Tasks
 -Implement Isometric Timer
 -Include a description of why for each timer
 -Include filters For the events
+
+-Touch up Aesthetics for the App before Launch
+
+- Oraganise the data for the App
